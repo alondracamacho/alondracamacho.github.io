@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Crafting Shop</title>
+  
+</head>
+<body>
+
+    <script>
+        window.alert("Hello. Welcome to our shop! Here, we make creativity our top priority. We hope to provide our customers the best experience possible.")
+    </script>
+
+    <script type = "text/javascript">
+        var name;
+        name = window.prompt ("Please enter your name: ");
+        
+        now = new Date();
+        
+        hour = now.getHours;
+            if (hour < 12) {
+                document.writeln("<h1> Good morning ");
+            }
+            else if (hour < 18) {
+                document.writeln("<h1> Good afternoon ");
+            }
+            else{
+                document.writeln("<h1> Good evening ");
+            }
+
+        document.write(name + "</h1>");
+
+        var itemRequested, numOfItems;
+        itemRequested = window.prompt ("Which item were you hoping to purchase from our shop today?: \n [1] yarn \n [2] knitting needles \n [3] polymer clay \n [4] acryllic paint \n [5] paint brushes");
+            while (!(itemRequested == 1 || itemRequested == 2 || itemRequested == 3 || itemRequested == 4 || itemRequested == 5)) {
+                window.alert("Error. We unfortunately cant process your order. Only numbers corresponding with our items are possible inputs, such as 1, 2, 3, 4, or 5. Please try again.");
+                itemRequested = window.prompt ("Which item were you hoping to purchase from our shop today?: \n [1] Yarn \n [2] Knitting needles \n [3] Polymer clay \n [4] Acryllic paint \n [5] Paint brushes");
+            }
+            
+            numOfItems = window.prompt ("How many of the selected item would you like to purchase?:");
+            while (numOfItems < 1 || numOfItems > 99){
+                window.alert("Error. We unfortunately cant process your order. Only orders with a minumum of 1 item and maximum of 99 items can be processed. Please try again.");
+                numOfItems = window.prompt ("How many of your items would you like to purchase?: ");
+            }
+
+            document.writeln("<p>Your order has been confirmed. We will work on getting your order to you as soon as possible!");
+            
+            document.writeln("<h2>Order Details: </h2>");
+            
+            document.writeln("<h3> Item: </h3>");
+            
+                if (itemRequested == 1)
+                    document.write("<p>yarn</p>");
+                else if (itemRequested == 2)
+                    document.write("<p>knitting needles</p>");
+                else if (itemRequested == 3)
+                    document.write("<p>polymer clay</p>");
+                else if (itemRequested == 4)
+                    document.write("<p>acryllic paint</p>");
+                else
+                    document.write("<p>paint brushes</p>");
+        
+            document.writeln("<h3> Quantity: </h3>");
+            document.writeln(numOfItems);
+
+        document.writeln("<h2>Delivery Details: </h2> \n");
+        
+        var expectedDelivery = new Date(now.getTime() + (7 * 24 * 60 * 60 * 1000))
+        
+        document.writeln("Your estimated delivery is: " + expectedDelivery + ". Thank you for shopping with us!</h1>");
+            
+
+
+    </script>
+</body>
+</html>
