@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+        <style>
+            img {
+               
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+
+            body {
+            background-color: rgb(118, 159, 201);
+                }
+            </style>
+
+        <script>
+            async function collectContinents() {
+
+                const deleteThis = document.getElementById("deleteThis");
+                deleteThis.remove();
+
+                const deleteThis2 = document.getElementById("deleteThisToo");
+                deleteThis2.remove();
+
+
+            const url = 'https://game-of-thrones1.p.rapidapi.com/Continents';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+                    'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+                }
+            };
+            
+            try {
+                const response = await fetch(url, options);
+                
+                //allow data to be accessed and modified later(might change later to use parse instead)
+                const result = await response.json();
+                console.log(result);
+            
+                //where you want to display names
+                const getNames = document.getElementById('result');
+
+                const addText = document.createElement('p');
+                addText.innerHTML = "Here are all the continents mentioned in the GOT books: ";
+                getNames.appendChild(addText);
+            
+                //loop to read and display each element in console
+              result.forEach(continent => {
+                    
+                    //will separate each name into own paragraph form
+                const addParagraph = document.createElement('p');
+                addParagraph.innerHTML = continent.name;
+               getNames.appendChild(addParagraph);
+               });
+            }
+                
+            catch (error) {
+                console.error(error);
+            }
+            }
+            
+           
+            </script>
+    
+        <title>Intro</title>
+        
+    </head>
+
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Setting - when and where</h1>
+            
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://alondracamacho.github.io/homePage.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://alondracamacho.github.io/continents.html">Intro</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/mainCharacters.html">Main Characters</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/houses.html">Houses</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/end.html">Conclusions</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+     
+    <div class="container">
+   
+        <div class = "row">
+            <div class = "col-6">
+                <br>
+                <h1>Time Frame:</h1>
+                <p>Based off historical events, it's estimated to take place during 298 A.C. at the start of the show. Events shown are covering the span of 6 to 7 years.</p>
+                <h1>Where?:</h1>
+                <p>The series only truly covers two continents in the GOT world, Westeros and Essos. While Essos is the largest of the known continents, the show discloses a lot more information about Westeros.</p>
+
+                <p>Here are a few differences between the two:</p>
+
+                <p><b>Westeros</b></p>
+                    <ul>
+                        <li>Plot is heavily focused here</li>
+                        <li>Location of the Iron Throne</li>
+                        <li>stonger military base</li>
+                        <li>all ruled over one power - monarchy</li>
+                    </ul>
+                
+                <p><b>Essos</b></p>
+                    <ul>
+                        <li>more politically diverse</li>
+                        <li>variety of cultures, languages, customs</li>
+                        <li>complete map not available since less is known</li>
+                    </ul>
+
+                <p id = "deleteThis"><b>Click the button to see all continents:</b></p>
+                <button id = "deleteThisToo" onclick = "collectContinents()">Click</button>
+               
+                
+                <div style = "text-align: center" id = "result"></div>
+            </div>
+        
+
+            <div class = "col-sm-6" >
+                <br>
+                <img src = "https://static.wikia.nocookie.net/gameofthrones/images/7/71/Westeros_HBO.png/revision/latest?cb=20111113154717" >
+            </div>
+        </div>
+    
+    </div>
+    
+</body>
+</html>
+
+<!-----Correct:
+    make sure everything is responsive
+    change row of button results as separated by tab perhaps
+-->

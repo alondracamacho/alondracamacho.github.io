@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            
+            body {
+            background-color: rgb(118, 159, 201);
+                }
+        </style>
+        <script>
+            async function getAllOriginalCharacters() {
+            const url = 'https://game-of-thrones1.p.rapidapi.com/Characters';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+                    'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+                }
+            };
+            
+            try {
+                const response1 = await fetch(url, options);
+                
+                //allow data to be accessed and modified later(might change later to use parse instead)
+                const result1 = await response1.json();
+                console.log(result1);
+            
+                //where you want to display names
+                const getNames1 = document.getElementById('allResults');
+            
+                //loop to read and display each element in console
+               result1.forEach(character1 => {
+                    
+                //will separate each name into own paragraph form
+                    const addParagraph1 = document.createElement('p');
+                    addParagraph1.innerHTML = character1.firstName + " " + character1.lastName;
+                    if (character1.lastName == "None" || character1.lastName == "Unknown")
+                    addParagraph1.innerHTML = character1.firstName;
+                    getNames1.appendChild(addParagraph1);
+                });
+            }
+                
+            catch (error) {
+                console.error(error);
+            }
+            }
+            
+         
+            </script>    
+        
+        <script>
+            async function getAllCharacters() {
+
+            const deleteIt = document.getElementById("allResults");
+            deleteIt.remove();
+
+            const delete2 = document.getElementById("delete2");
+            delete2.remove();
+
+            const deletePrevious = document.getElementById("previous");
+            deletePrevious.remove();
+        
+            const deletePrevious2 = document.getElementById("previous2");
+            deletePrevious2.remove();
+
+            const deletePrevious3 = document.getElementById("previous3");
+            deletePrevious3.remove();
+
+            const url = 'https://game-of-thrones1.p.rapidapi.com/Characters';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+                    'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+                }
+            };
+            
+            try {
+                const response = await fetch(url, options);
+                
+                //allow data to be accessed and modified later(might change later to use parse instead)
+                const result = await response.json();
+                console.log(result);
+            
+                //where you want to display names
+                const starks = document.getElementById('resultStark');
+                const lannisters = document.getElementById('resultLannister');
+                const baratheons = document.getElementById('resultBaratheon');
+                const greyjoys = document.getElementById('resultGreyjoy');
+                const targaryens = document.getElementById('resultTargaryen');
+                const others = document.getElementById('resultOthers');
+                const replace = document.getElementById('replace');
+               
+
+
+
+                //add headers
+                const addHeader1 = document.createElement('h4');
+                addHeader1.innerHTML = "House Stark";
+                starks.appendChild(addHeader1);
+
+                const addHeader2 = document.createElement('h4');
+                addHeader2.innerHTML = "House Lannister";
+                lannisters.appendChild(addHeader2);
+
+                const addHeader3 = document.createElement('h4');
+                addHeader3.innerHTML = "House Baratheon";
+                baratheons.appendChild(addHeader3);
+
+                const addHeader4 = document.createElement('h4');
+                addHeader4.innerHTML = "House Greyjoy";
+                greyjoys.appendChild(addHeader4);
+
+                const addHeader5 = document.createElement('h4');
+                addHeader5.innerHTML = "House Targaryen";
+                targaryens.appendChild(addHeader5);
+
+                const addHeader6 = document.createElement('h4');
+                addHeader6.innerHTML = "Others";
+                others.appendChild(addHeader6);
+
+                const addText = document.createElement('p');
+                addText.innerHTML = "Here's a list of the most relavent houses for the first season of the show: ";
+                replace.appendChild(addText);
+
+            
+                //loop to read and display each element in console
+               result.forEach(character => {
+                    
+                //will separate each name into own paragraph form
+                    const addParagraph = document.createElement('p');
+                    addParagraph.innerHTML = character.firstName + " " + character.lastName;
+
+                    if (character.lastName == "None" || character.lastName == "Unknown")
+                    addParagraph.innerHTML = character.firstName;
+
+              
+                    if (character.family == "Stark" || character.family == "House Stark")
+                      
+                        starks.appendChild(addParagraph);
+                    
+                    else if (character.family == "Lannister" || character.family == "House Lannister" || character.family == "House Lanister")
+                        lannisters.appendChild(addParagraph);
+
+                    else if (character.family == "Baratheon" || character.family == "House Baratheon")
+                        baratheons.appendChild(addParagraph);
+
+                    else if (character.family == "Greyjoy" || character.family == "House Greyjoy")
+                        greyjoys.appendChild(addParagraph);
+
+                    else if (character.family == "House Targaryen" || character.family == "Targaryan")
+                        targaryens.appendChild(addParagraph);
+
+                    else
+                        others.appendChild(addParagraph);
+                });
+            }
+                
+            catch (error) {
+                console.error(error);
+            }
+            }
+            
+            </script>
+
+            
+    
+        <title>Houses</title>
+        
+       
+
+    </head>
+
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Important Families</h1>
+            <h2 class="lead">The method of classification</h2>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://alondracamacho.github.io/homePage.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://alondracamacho.github.io/continents.html">Intro</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/mainCharacters.html">Main Characters</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/houses.html">Houses</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/end.html">Conclusions</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+     
+    <div class="container">
+        <div class = "row">
+            
+            <div class = "col-12">
+                <br>
+                <p style = "text-align: center" id = "delete2">Since there are numerous characters in the first season alone, we can separate them into which family group they belong to. This will make identifying their roles in the show a lot easier.</p>
+                <br> 
+                <div style = "text-align: center" id = "replace"></div>
+               
+            </div>
+        </div>
+
+        <br>
+       
+        
+
+        <div class = "row">
+            <div class = "col-sm text-center">
+                <p id = "previous"><b>Below is a list of all characters retrieved:</b></p>
+                <div id = "allResults"></div>
+            </div>
+            <div class = "col-sm text-center">
+                <p id = "previous2">Click on the button to sort the characters into their corresponding family/house:</p>
+                <button id = "previous3" onclick = "getAllCharacters()">Sort</button>
+            </div>
+        </div>
+        
+        
+        
+        <div class = "row">
+
+            
+
+            <div class = "col-sm text-center">
+                <div style = "text-align: center" id  = "resultLannister"></div>
+                <div style = "text-align: center" id = "resultBaratheon"></div>
+                <div style = "text-align: center" id = "resultGreyjoy"></div>
+                <br>
+                
+                
+            </div>
+            
+            <div class = "col-sm text-center">
+               
+                <div style = "text-align: center" id = "resultStark"></div>
+                <div style = "text-align: center" id = "resultTargaryen"></div>
+            </div>
+            
+            <div class = "col-sm text-center ">
+                
+                <div style = "text-align: center" id = "resultOthers"></div>
+              
+            </div>
+
+      
+                
+                
+            </div>
+            
+        </div>
+            
+        </div>
+
+
+        <br>
+        <br>
+
+       
+            
+            <script>getAllOriginalCharacters()</script>
+       </div>
+    </div>
+    
+  
+   
+</body>
+</html>

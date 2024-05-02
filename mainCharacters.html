@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <style>
+            img {
+                height: 200px;
+               
+                display: block;
+              margin-left: auto;
+              margin-right: auto;
+            }
+
+            body {
+            background-color: rgb(118, 159, 201);
+                }
+        </style>
+    
+        <script>
+            async function getJonSnow() {
+            const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/2';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+                    'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+                }
+            };
+            
+            try {
+                const jonResponse = await fetch(url, options);
+                
+                //allow data to be accessed and modified later(might change later to use parse instead)
+                const jonResult = await jonResponse.json();
+                console.log(jonResult);
+            
+                //where you want to display names
+                const getJonName = document.getElementById('jonResult');
+                const getJonImage = document.getElementById('jonImg');
+                const getJonFamily = document.getElementById('jonFamily');
+            
+                //loop to read and display each element in console
+          
+                    
+                //will separate each name into own paragraph form
+                    const addParagraph1 = document.createElement('p');
+                    addParagraph1.innerHTML = "Name: " + jonResult.firstName + " " + jonResult.lastName;
+                    getJonName.appendChild(addParagraph1);
+
+                    const addImg1 = document.createElement('img');
+                    addImg1.src = jonResult.imageUrl;
+                    getJonImage.appendChild(addImg1);
+
+                    const addFamilyParagraph1 = document.createElement('p');
+                    addFamilyParagraph1.innerHTML = "Family: " + jonResult.family;
+                    getJonFamily.appendChild(addFamilyParagraph1);
+            }
+                
+            catch (error) {
+                console.error(error);
+            }
+            } 
+        </script>
+
+<script>
+    async function getNed() {
+    const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/6';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+            'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const nedResponse = await fetch(url, options);
+        
+        //allow data to be accessed and modified later(might change later to use parse instead)
+        const nedResult = await nedResponse.json();
+        console.log(nedResult);
+    
+        //where you want to display names
+        const getNedName = document.getElementById('nedResult');
+        const getNedImage = document.getElementById('nedImg');
+        const getNedFamily = document.getElementById('nedFamily');
+    
+        //loop to read and display each element in console
+  
+            
+        //will separate each name into own paragraph form
+            const addParagraph2 = document.createElement('p');
+            addParagraph2.innerHTML = "Name: " + nedResult.firstName + " " + nedResult.lastName;
+            getNedName.appendChild(addParagraph2);
+
+            const addImg2 = document.createElement('img');
+            addImg2.src = nedResult.imageUrl;
+            getNedImage.appendChild(addImg2);
+
+            const addFamilyParagraph2 = document.createElement('p');
+            addFamilyParagraph2.innerHTML = "Family: " + nedResult.family;
+            getNedFamily.appendChild(addFamilyParagraph2);
+    }
+        
+    catch (error) {
+        console.error(error);
+    }
+    } 
+</script>
+
+<script>
+    async function getDanny() {
+    const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/0';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+            'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const dannyResponse = await fetch(url, options);
+        
+        //allow data to be accessed and modified later(might change later to use parse instead)
+        const dannyResult = await dannyResponse.json();
+        console.log(dannyResult);
+    
+        //where you want to display names
+        const getDannyName = document.getElementById('dannyResult');
+        const getDannyImage = document.getElementById('dannyImg');
+        const getDannyFamily = document.getElementById('dannyFamily');
+    
+        //loop to read and display each element in console
+  
+            
+        //will separate each name into own paragraph form
+            const addParagraph3 = document.createElement('p');
+            addParagraph3.innerHTML = "Name: " + dannyResult.firstName + " " + dannyResult.lastName;
+            getDannyName.appendChild(addParagraph3);
+
+            const addImg3 = document.createElement('img');
+            addImg3.src = dannyResult.imageUrl;
+            getDannyImage.appendChild(addImg3);
+
+            const addFamilyParagraph3 = document.createElement('p');
+            addFamilyParagraph3.innerHTML = "Family: " + dannyResult.family;
+            getDannyFamily.appendChild(addFamilyParagraph3);
+    }
+        
+    catch (error) {
+        console.error(error);
+    }
+    } 
+</script>
+
+<script>
+    async function getRobert() {
+    const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/7';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+            'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const robertResponse = await fetch(url, options);
+        
+        //allow data to be accessed and modified later(might change later to use parse instead)
+        const robertResult = await robertResponse.json();
+        console.log(robertResult);
+    
+        //where you want to display names
+        const getRobertName = document.getElementById('robertResult');
+        const getRobertImage = document.getElementById('robertImg');
+        const getRobertFamily = document.getElementById('robertFamily');
+    
+        //loop to read and display each element in console
+  
+            
+        //will separate each name into own paragraph form
+            const addParagraph4 = document.createElement('p');
+            addParagraph4.innerHTML = "Name: " + robertResult.firstName + " " + robertResult.lastName;
+            getRobertName.appendChild(addParagraph4);
+
+            const addImg4 = document.createElement('img');
+            addImg4.src = robertResult.imageUrl;
+            getRobertImage.appendChild(addImg4);
+
+            const addFamilyParagraph4 = document.createElement('p');
+            addFamilyParagraph4.innerHTML = "Family: " + robertResult.family;
+            getRobertFamily.appendChild(addFamilyParagraph4);
+    }
+        
+    catch (error) {
+        console.error(error);
+    }
+    } 
+</script>
+
+<script>
+    async function getCat() {
+    const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/10';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+            'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const catResponse = await fetch(url, options);
+        
+        //allow data to be accessed and modified later(might change later to use parse instead)
+        const catResult = await catResponse.json();
+        console.log(catResult);
+    
+        //where you want to display names
+        const getCatName = document.getElementById('catResult');
+        const getCatImage = document.getElementById('catImg');
+        const getCatFamily = document.getElementById('catFamily');
+    
+        //loop to read and display each element in console
+  
+            
+        //will separate each name into own paragraph form
+            const addParagraph5 = document.createElement('p');
+            addParagraph5.innerHTML = "Name: " + catResult.firstName + " " + catResult.lastName;
+            getCatName.appendChild(addParagraph5);
+
+            const addImg5 = document.createElement('img');
+            addImg5.src = catResult.imageUrl;
+            getCatImage.appendChild(addImg5);
+
+            const addFamilyParagraph5 = document.createElement('p');
+            addFamilyParagraph5.innerHTML = "Family: " + catResult.family;
+            getCatFamily.appendChild(addFamilyParagraph5);
+    }
+        
+    catch (error) {
+        console.error(error);
+    }
+    } 
+</script>
+
+<script>
+    async function getJamie() {
+    const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/8';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+            'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const jamieResponse = await fetch(url, options);
+        
+        //allow data to be accessed and modified later(might change later to use parse instead)
+        const jamieResult = await jamieResponse.json();
+        console.log(catResult);
+    
+        //where you want to display names
+        const getJamieName = document.getElementById('jamieResult');
+        const getJamieImage = document.getElementById('jamieImg');
+        const getJamieFamily = document.getElementById('jamieFamily');
+    
+        //loop to read and display each element in console
+  
+            
+        //will separate each name into own paragraph form
+            const addParagraph6 = document.createElement('p');
+            addParagraph6.innerHTML = "Name: " + jamieResult.firstName + " " + jamieResult.lastName;
+            getJamieName.appendChild(addParagraph6);
+
+            const addImg6 = document.createElement('img');
+            addImg6.src = jamieResult.imageUrl;
+            getJamieImage.appendChild(addImg6);
+
+            const addFamilyParagraph6 = document.createElement('p');
+            addFamilyParagraph6.innerHTML = "Family: " + jamieResult.family;
+            getJamieFamily.appendChild(addFamilyParagraph6);
+    }
+        
+    catch (error) {
+        console.error(error);
+    }
+    } 
+</script>
+
+<script>
+    async function getKhal() {
+    const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/20';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+            'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const khalResponse = await fetch(url, options);
+        
+        //allow data to be accessed and modified later(might change later to use parse instead)
+        const khalResult = await khalResponse.json();
+        console.log(khalResult);
+    
+        //where you want to display names
+        const getKhalName = document.getElementById('khalResult');
+        const getKhalImage = document.getElementById('khalImg');
+        const getKhalFamily = document.getElementById('khalFamily');
+    
+        //loop to read and display each element in console
+  
+            
+        //will separate each name into own paragraph form
+            const addParagraph7 = document.createElement('p');
+            addParagraph7.innerHTML = "Name: " + khalResult.firstName + " " + khalResult.lastName;
+            getKhalName.appendChild(addParagraph7);
+
+            const addImg7 = document.createElement('img');
+            addImg7.src = khalResult.imageUrl;
+            getKhalImage.appendChild(addImg7);
+
+            const addFamilyParagraph7 = document.createElement('p');
+            addFamilyParagraph7.innerHTML = "Family: " + khalResult.family;
+            getKhalFamily.appendChild(addFamilyParagraph7);
+    }
+        
+    catch (error) {
+        console.error(error);
+    }
+    } 
+</script>
+
+<script>
+    async function getTyrion() {
+    const url = 'https://game-of-thrones1.p.rapidapi.com/Characters/14';
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'a9cb573313msh69b9db128920c71p161dbejsn9ba20b8f39fa',
+            'X-RapidAPI-Host': 'game-of-thrones1.p.rapidapi.com'
+        }
+    };
+    
+    try {
+        const tyrionResponse = await fetch(url, options);
+        
+        //allow data to be accessed and modified later(might change later to use parse instead)
+        const tyrionResult = await tyrionResponse.json();
+        console.log(tyrionResult);
+    
+        //where you want to display names
+        const getTyrionName = document.getElementById('tyrionResult');
+        const getTyrionImage = document.getElementById('tyrionImg');
+        const getTyrionFamily = document.getElementById('tyrionFamily');
+    
+        //loop to read and display each element in console
+  
+            
+        //will separate each name into own paragraph form
+            const addParagraph8 = document.createElement('p');
+            addParagraph8.innerHTML = "Name: " + tyrionResult.firstName + " " + tyrionResult.lastName;
+            getTyrionName.appendChild(addParagraph8);
+
+            const addImg8 = document.createElement('img');
+            addImg8.src = tyrionResult.imageUrl;
+            getTyrionImage.appendChild(addImg8);
+
+            const addFamilyParagraph8 = document.createElement('p');
+            addFamilyParagraph8.innerHTML = "Family: " + tyrionResult.family;
+            getTyrionFamily.appendChild(addFamilyParagraph8);
+    }
+        
+    catch (error) {
+        console.error(error);
+    }
+    } 
+</script>
+
+        <title>Main Characters</title>
+    
+    </head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Major Roles in the Show</h1>
+            <h2 class="lead">Just really looking at season 1.</h2>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="https://alondracamacho.github.io/homePage.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://alondracamacho.github.io/continents.html">Intro</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/mainCharacters.html">Main Characters</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/houses.html">Houses</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "https://alondracamacho.github.io/end.html">Conclusions</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+     
+    <div class="container">
+   
+        <div class = "row">
+            <div class = "col-12">
+                <p>There are too many characters in the entire show, so we will only look at some of the protagonists from season 1. They each have an important storyline.</p>
+            <br>
+                <p style = "text-align: center"><b>Here, you might see some familiar faces:</b></p>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class = "row">
+            <div class = "col-sm-3">
+                <div id = "jonImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "jonResult" style = "text-align: center"></div>
+
+                <div id = "jonFamily" style = "text-align: center"></div>
+
+            </div>
+            
+            <script>getJonSnow();</script>
+            
+            <div class = "col-sm-3">
+                <div id = "nedImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "nedResult" style = "text-align: center"></div>
+
+                <div id = "nedFamily" style = "text-align: center"></div>
+
+            </div>
+        
+            <script>getNed();</script>
+
+            <div class = "col-sm-3">
+                <div id = "dannyImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "dannyResult" style = "text-align: center"></div>
+
+                <div id = "dannyFamily" style = "text-align: center"></div>
+
+            </div>
+        
+            <script>getDanny();</script>
+
+            <div class = "col-sm-3">
+                <div id = "robertImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "robertResult" style = "text-align: center"></div>
+
+                <div id = "robertFamily" style = "text-align: center"></div>
+
+            </div>
+        
+            <script>getRobert();</script>
+        
+        </div>
+
+        <div class = "row">
+            <div class = "col-sm-3">
+                <div id = "catImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "catResult" style = "text-align: center"></div>
+
+                <div id = "catFamily" style = "text-align: center"></div>
+            </div>
+
+            <script>getCat();</script>
+
+            <div class = "col-sm-3">
+                <div id = "jamieImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "jamieResult" style = "text-align: center"></div>
+
+                <div id = "jamieFamily" style = "text-align: center"></div>
+            </div>
+
+            <script>getJamie();</script>
+
+            <div class = "col-sm-3">
+                <div id = "khalImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "khalResult" style = "text-align: center"></div>
+
+                <div id = "khalFamily" style = "text-align: center"></div>
+            </div>
+
+            <script>getKhal();</script>
+
+            <div class = "col-sm-3">
+                <div id = "tyrionImg" class = "text-center img-fluid" alt="Responsive image"></div>
+                
+                <div id = "tyrionResult" style = "text-align: center"></div>
+
+                <div id = "tyrionFamily" style = "text-align: center"></div>
+            </div>
+
+            <script>getTyrion();</script>
+        </div>
+    </div>
+    
+    
+    
+
+
+
+   
+
+
+   
+</body>
+</html>
